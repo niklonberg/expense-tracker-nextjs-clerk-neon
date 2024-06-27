@@ -14,23 +14,23 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  clerkUserId String @unique
-  email String @unique
-  name String?
-  imageUrl String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  transactions Transaction[]
+  id String @id @default(uuid())                 // Unique identifier for the user, auto-generated UUID
+  clerkUserId String @unique                     // Unique identifier for the user from an external service (e.g., Clerk)
+  email String @unique                           // User's email, must be unique
+  name String?                                   // User's name, optional field
+  imageUrl String?                               // URL to the user's profile image, optional field
+  createdAt DateTime @default(now())             // Timestamp of user creation, auto-set to current date and time
+  updatedAt DateTime @updatedAt                  // Timestamp of last user update, auto-updated whenever the user is modified
+  transactions Transaction[]                     // One-to-many relationship with the Transaction model
 }
 
 model Transaction {
-  id String @id @default(uuid())
-  text String
-  amount Float
-  // Relation to user
-  userId String
-  user User @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade)
-  createdAt DateTime @default(now())
-  @@index([userId])
+  id String @id @default(uuid())                        // Unique identifier for the transaction, auto-generated UUID
+  text String                                           // Description or text related to the transaction
+  amount Float                                          // Amount of the transaction
+  // Relation to User
+  userId String                                         // Foreign key referencing the User model's clerkUserId
+  user User @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade) // Relation to User model
+  createdAt DateTime @default(now())                    // Timestamp of transaction creation, auto-set to current date and time
+  @@index([userId])                                     // Index on userId for faster querying
 }
