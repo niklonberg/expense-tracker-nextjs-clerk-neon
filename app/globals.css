@@ -54,3 +54,7 @@ body {
   background: transparent;
   border: 0;
 }
+
+.guest {
+  text-align: center;
+}
