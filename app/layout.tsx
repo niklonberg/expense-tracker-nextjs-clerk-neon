@@ -20,10 +20,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={roboto.className}>
-          <main className="container">
-            <Header />
-            {children}
-          </main>
+          <Header />
+          <main className="container">{children}</main>
         </body>
       </html>
     </ClerkProvider>
