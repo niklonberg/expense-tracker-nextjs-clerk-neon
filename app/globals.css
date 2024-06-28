@@ -64,6 +64,12 @@ label {
   margin: 10px 0;
 }
 
+label span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
 input[type="text"],
 input[type="number"] {
   border: 1px solid #dedede;
