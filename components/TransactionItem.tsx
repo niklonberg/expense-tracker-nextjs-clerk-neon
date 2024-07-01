@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { Transaction } from "@prisma/client";
 import { addThousandNumberCommas } from "@/lib/utils";
 import { toast } from "react-toastify";
+import deleteTransaction from "@/app/actions/deleteTransaction";
 
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   const sign = transaction.amount > 0 ? "+" : "-";
@@ -13,9 +16,13 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
 
     if (!confirm) return;
 
-    await deleteTransaction(transactionId);
+    const { message, error } = await deleteTransaction(transactionId);
 
-    toast.success("Transaction deleted");
+    if (error) {
+      toast.error(error);
+    } else {
+      toast.success(message);
+    }
   }
 
   return (
