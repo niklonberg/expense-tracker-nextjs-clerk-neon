@@ -167,3 +167,16 @@ h2 {
 .list li.negative {
   border-right: 5px solid #c0392b;
 }
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #c33323;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(150%, -50%);
+}
