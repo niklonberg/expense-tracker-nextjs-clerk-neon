@@ -11,22 +11,21 @@ interface TransactionResult {
 }
 
 async function addTransaction(formData: FormData): Promise<TransactionResult> {
-  const textValue = formData.get("text");
-  const amountValue = formData.get("amount");
+  const textValue = formData.get("text")?.toString() ?? "";
+  const amountValue = formData.get("amount")?.toString() ?? "";
+
   let errMsg = "";
-  // form check
-  if (!textValue || textValue.toString().trim() === "") {
-    errMsg = "Please add text describing the transaction. ";
+  if (textValue === "") {
+    errMsg += "Please add text describing the transaction. ";
   }
-  if (!amountValue) errMsg += "Please add an amount for the transaction.";
+  if (amountValue === "") {
+    errMsg += "Please add an amount for the transaction.";
+  }
   if (errMsg) return { error: errMsg };
 
-  const text: string = textValue.toString(); // Ensure text is a string
-  const amount: number = parseFloat(amountValue.toString()); // Parse amount as number
-
   const transactionData: TransactionData = {
-    text,
-    amount,
+    text: textValue,
+    amount: parseFloat(amountValue),
   };
 
   return { data: transactionData };
