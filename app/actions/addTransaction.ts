@@ -30,3 +30,5 @@ async function addTransaction(formData: FormData): Promise<TransactionResult> {
 
   return { data: transactionData };
 }
+
+export default addTransaction;
