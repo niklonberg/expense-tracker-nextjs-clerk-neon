@@ -86,9 +86,47 @@ input[type="number"] {
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
+  border-radius: 2rem;
   display: block;
   font-size: 16px;
-  margin: 10px 0 30px;
+  margin: 20px 0 30px;
   padding: 10px;
   width: 100%;
+}
+
+.balance-text {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+.income-expense-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  border-radius: 1rem;
+  justify-content: space-between;
+}
+
+.income-expense-container > section {
+  flex: 1;
+  text-align: center;
+}
+
+.income-expense-container > section:first-of-type {
+  border-right: 1px solid #c1c1c1;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.positive {
+  color: #007a33;
+}
+
+.money.negative {
+  color: #c0392b;
 }
