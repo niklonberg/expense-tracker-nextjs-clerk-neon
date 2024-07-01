@@ -136,3 +136,34 @@ input[type="number"] {
   color: #fff;
   padding: 3px;
 }
+
+h2 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.positive {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.negative {
+  border-right: 5px solid #c0392b;
+}
