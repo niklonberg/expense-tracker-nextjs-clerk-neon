@@ -8,7 +8,7 @@ const IncomeExpense = () => {
         <p className="money positive">$600</p>
       </section>
       <section>
-        <h4>Expense</h4>
+        <h4>Expenses</h4>
         <p className="money negative">$200</p>
       </section>
     </div>
