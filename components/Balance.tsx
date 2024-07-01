@@ -1,5 +1,6 @@
 import React from "react";
 import getUserBalance from "@/app/actions/getUserBalance";
+import { addThousandNumberCommas } from "@/lib/utils";
 
 const Balance = async () => {
   const { balance } = await getUserBalance();
@@ -7,7 +8,7 @@ const Balance = async () => {
   return (
     <>
       <h3>Your balance</h3>
-      <h1>{balance ?? 0}</h1>
+      <h1>{addThousandNumberCommas(balance ?? 0)}</h1>
     </>
   );
 };
