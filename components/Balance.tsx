@@ -8,7 +8,9 @@ const Balance = async () => {
   return (
     <>
       <h3>Your balance</h3>
-      <p className="balance-text">{addThousandNumberCommas(balance ?? 0)}</p>
+      <p className="balance-text">
+        {addThousandNumberCommas(Number(balance?.toFixed(2)) ?? 0)}
+      </p>
     </>
   );
 };
