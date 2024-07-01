@@ -1,7 +1,12 @@
 import React from "react";
 import { Transaction } from "@prisma/client";
+import getTransactions from "@/app/actions/getTransactions";
 
-const TransactionList = () => {
+const TransactionList = async () => {
+  const { transactions, error } = await getTransactions();
+
+  if (error) return <p className="error">{error}</p>;
+
   return (
     <>
       <h3>History</h3>

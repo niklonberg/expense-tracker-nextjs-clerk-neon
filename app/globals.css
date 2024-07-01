@@ -130,3 +130,9 @@ input[type="number"] {
 .money.negative {
   color: #c0392b;
 }
+
+.error {
+  background: red;
+  color: #fff;
+  padding: 3px;
+}
