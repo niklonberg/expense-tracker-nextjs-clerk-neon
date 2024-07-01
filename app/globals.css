@@ -80,9 +80,9 @@ input[type="number"] {
   width: 100%;
 }
 
-.btn {
+.add-transaction-btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: #7766cf;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;

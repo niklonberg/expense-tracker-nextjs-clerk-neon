@@ -32,7 +32,7 @@ const AddTransaction = () => {
           </label>
           <input type="number" name="amount" id="amount" step={0.01} />
         </div>
-        <button className="btn">Add transaction</button>
+        <button className="add-transaction-btn">Add transaction</button>
       </form>
     </>
   );
